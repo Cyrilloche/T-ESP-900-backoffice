@@ -1,0 +1,17 @@
+# docker/docker-compose.prod.yml
+services:
+  backoffice.prod:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.prod
+    container_name: MeetMeat.Backoffice.Prod
+    ports:
+      - "8080:80"
+    env_file:
+      - ../docker/.env.prod
+    networks:
+      - MeetMeat.production.network
+
+networks:
+  MeetMeat.production.network:
+    driver: bridge
