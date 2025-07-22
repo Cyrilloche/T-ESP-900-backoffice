@@ -1,0 +1,6 @@
+# Back-office, .gitignore
+*.vscode/
+*.idea/
+*package-lock.json
+*.env*
+!.env.example

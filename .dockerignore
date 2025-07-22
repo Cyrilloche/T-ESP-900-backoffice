@@ -1,0 +1,45 @@
+# Ignorer les dépendances locales (Docker les installera)
+backoffice/node_modules
+backoffice/.npm
+backoffice/.yarn
+backoffice/.cache
+
+# Build local (on le régénère dans Docker)
+backoffice/dist
+
+# Fichiers temporaires ou spécifiques à l'OS
+**/.DS_Store
+**/Thumbs.db
+
+# Fichiers d’IDE ou d’éditeur
+backoffice/.vscode
+backoffice/.idea
+
+# Fichiers de test
+backoffice/tests/
+backoffice/__tests__/
+backoffice/*.test.*
+backoffice/*.spec.*
+backoffice/jest.config.*
+backoffice/vitest.config.*
+backoffice/playwright.config.*
+
+# Config git
+backoffice/.git
+backoffice/.gitignore
+backoffice/.gitattributes
+
+# Fichiers d’environnement (gérés autrement dans Docker Compose)
+backoffice/docker/.env
+backoffice/docker/.env.*.local
+
+# Fichiers de logs
+backoffice/*.log
+backoffice/npm-debug.log*
+backoffice/yarn-debug.log*
+backoffice/pnpm-debug.log*
+
+# Docs (inutile dans l'image)
+backoffice/*.md
+backoffice/LICENSE
+backoffice/*.pdf

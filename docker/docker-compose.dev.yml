@@ -1,0 +1,22 @@
+# Back-office, development docker-compose
+name: meetmeat-dev
+services:
+  backoffice:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.dev
+    container_name: backoffice
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    volumes:
+      - ../backoffice:/app
+      - /app/node_modules
+    environment:
+      - TZ=${TZ}
+    networks:
+      - meetmeat-dev-network
+
+networks:
+  meetmeat-dev-network:
+    driver: bridge
